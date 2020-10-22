@@ -6,11 +6,11 @@ const path = '/users';
 
 // >> Here will be the
 // definition of the routes.
-router.get('', UserController.getUser);
-router.get('get', UserController.getUser);
-router.post('post', UserController.createUser);
-router.put('put', UserController.updateUser);
-router.delete('delete', UserController.deleteUser);
+router.get('/getUser/:id', UserController.getUser); // /users/user
+router.get('/getAllUsers', UserController.getAllUsers); // /users/get
+router.post('/createUser', UserController.createUser);
+router.put('/updateUser/:id', UserController.updateUser);
+router.delete('/deleteUser/:id', UserController.deleteUser);
 
 
 module.exports = {

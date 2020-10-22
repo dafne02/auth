@@ -18,7 +18,12 @@ const server = http.createServer(app);
 // >> Here will be the connection
 // to mongodb.
 
-
+mongoose.connect(mongo.uri).then((db) => {
+  console.log("Successfully Established Connection with MongoDB");
+})
+.catch((err) => {
+  console.log(`Failed to Establish Connection with MongoDB with Error: ${err}`);
+});
 
 setImmediate(() => {
   server.listen(port, ip, () => {
