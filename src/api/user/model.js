@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+//const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 
 // >> Here will be the User schema.
@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
   lastname  :{type:String, required:true},
   email     :{type:String, required:true}
 });
-
+ 
 // >> Here will be the pre methods for the schema.
 UserSchema.pre('save', function() {
   const secpass = bcrypt.hashSync(this.password, 12);
