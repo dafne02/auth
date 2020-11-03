@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const { token } = require('morgan');
 const { jwtSecret } = require('../../config');
 
 const tomorrow = () => {
@@ -18,7 +19,6 @@ const jwtSignIn = ({_id, username, firstname, lastname, email}) => {
 }
 // >> Here is where login
 // and verification functions will be declared
-
 module.exports = {
     jwtSignIn
 }
