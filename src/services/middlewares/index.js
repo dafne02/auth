@@ -17,6 +17,7 @@ const authenticate =(req, res, next) =>{
                 res.status(200).json({msg: "Autenticado", user: user});
             }
         });
+        
         res.status(401).json({message: "Invalid token"});
     }else{
         console.log("token else")
